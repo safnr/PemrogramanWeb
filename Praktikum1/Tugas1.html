@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Form Registrasi </title>
+</html>
+<body>
+    <font type=arial black font size="6"><b> Form HTML </b></font>
+    <br> <br>
+    <font ty=arial size="2">
+        Name : <input type="text" name="nama">
+        <br>
+        <br>
+        Gender : 
+		<input type="radio" name="jenis_kelamin" value="L"> Man
+		<input type="radio" name="jenis_kelamin" value="P"> Woman
+		<br>
+        <br>
+        Address : <input type="text" name="alamat" value="">
+        <br>
+        <br>
+        Country: 
+        <select name="negara">
+            <option value="I">Indonesia</option>
+            <option value="M">Malaysia</option>
+            <option value="F">Filipina</option>
+            <option value="V">Vietnam</option>
+            <option value="A">Australia</option>
+            <option value="S">Singapore</option>
+            <option value="J">Jepang</option>
+            <option value="K">Korea</option>
+        </select>
+        <br>
+        <br>
+        Email: <input type="text" name="email" value="">
+        <br>
+        <br>
+        Photo: 
+        <input type="file" id="photo" name="photo" style="display:none" onchange="document.getElementById('filename').value=this.value">
+        <input type="text" id="filename">
+        <input type="button" value="Browse..." onclick="document.getElementById('photo').click()">
+        <br>
+        <br>
+        Comment: 
+        <textarea name="komentar" rows="6" cols="40"></textarea>
+        <input type="submit" name="submit" value="Submit">
+    </font>
+</body>
+</html>
