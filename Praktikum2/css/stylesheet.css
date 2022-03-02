@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300;1,600&display=swap');
+
+html {
+    font-family: 'Poppins', sans-serif;
+    background: whitesmoke;    
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px 0 10px;
+        background-color: rgb(61, 61, 61);
+    }
+
+    .stroke-transparent {
+        -webkit-text-stroke: 1px #000;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .social-links {
+      display: inline-block;
+      color: black;
+    }
+
+    .menu-bar {
+        display: inline-block;
+        color: black;
+    }
+
+    .menu-bar {
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+
+    .menu-bar ul li {
+        display: inline-block;
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    .menu-bar ul li a{
+        border-bottom: 1px solid; 
+        line-height: 17px; 
+        display: inline-block;
+        text-decoration: none; 
+        color: #ffffff;
+    }
+
+    .menu-bar ul li a:hover {
+        color: rgb(145, 145, 145);
+    }
+
+    .menu-bar ul li.active a {
+        color: rgb(145, 145, 145);
+    }
+
+    .card {
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+        overflow-x: hidden;
+        margin-bottom: 10px;
+        padding: 5px 20px 45px 20px;
+        background-color: #fff;
+        border-radius: 15pt;
+      }
+    
+    /*Remove underline from font awesome icon*/
+    a {
+        text-decoration: none !important;
+     }
+    
+    /*CSS milik jadwalMatkul.html*/
+    th {
+        color: #FFFFFF;
+        background-color: #5a5a5a;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(53, 53, 53);
+        font-size: 9pt;  
+    }
+    
+    td {
+        color: rgb(110, 96, 58);
+        background-color: #dfdfdf;
+        border-width: 1px;
+        border-style: solid;
+        border-color:  rgb(53, 53, 53);
+        font-size: 9pt;
+        text-align: center;
+    }
+
+    .tabelMatkul {
+        margin-left: auto;
+        margin-right: auto;    
+    }
+    /*Batas CSS milik jadwalMatkul.html*/
+
+    #container,
+    #main {
+        padding-top: 0%;
+        padding-right: 20%;
+        padding-bottom: 5%;
+        padding-left: 20%;
+    }
+
+    #profile {
+        flex: 15%;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+      #image {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+
+    #image,
+    #profile-photo {
+       position: relative;
+       width: 125px;
+       height: 125px;
+       border-radius: 10px;
+    }
+
+    #desc {
+        font-size: 14px !important;
+        line-height: 10px !important;
+        text-align: center;
+        color: rgb(69, 76, 90);
+    }
+    
+    #name {
+        font-size: 25px !important;
+        font-weight: bolder;
+        line-height: 10px !important;
+        text-align: center;
+    }
+
+    #generalInfo {
+        font-size: 14px !important;
+    } 
+
+    #about {
+        font-size: 25px !important;
+        position: absolute;
+        padding-top: 0%;
+        padding-right: 0%;
+        padding-bottom:0%;
+        padding-left: 13%;   
+        text-align: center;  
+        margin-top: -20px;   
+    }
+
+    footer {
+        padding-top: 10%;
+        padding-right: 0%;
+        padding-bottom: 0%;
+        padding-left: 0%;
+        font-size: 10px;
+        position: fixed; /* Set the navbar to fixed position */
+        bottom: 0; /* Position the navbar at the bottom of the page */
+        width: 100%; /* Full width */
+    }
+
+    #copyright {
+        padding-top: 0%;
+        padding-right: 0%;
+        padding-bottom: 0%;
+        padding-left: 5%;
+    }
+
+    
