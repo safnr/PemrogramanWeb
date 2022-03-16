@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Program Konversi Angka</title>
+    </head>
+    <script language="Javascript">
+    ///<!-
+    var angka = prompt("Nilai (0-100): ");
+            var nilai = "";
+            if (angka >= 0 && angka <= 40) {
+                nilai = "E";
+            } else if (angka >= 41 && angka <= 55) {
+                nilai = "D";
+            } else if (angka >= 56 && angka <= 60) {
+                nilai = "C";
+            } else if (angka >= 61 && angka <= 65) {
+                nilai = "BC";
+            } else if (angka >= 66 && angka <= 70) {
+                nilai = "B";
+            } else if (angka >= 71 && angka <= 80) {
+                nilai = "AB";
+            } else if (angka >= 81 && angka <= 100) {
+                nilai = "A";
+            } else {
+                nilai = "Angka tidak valid";
+                document.write("Nilai: " + nilai);                
+            }        
+        document.write("Nilai: " + nilai + "<br>");
+        document.write("Dimodifikasi terakhir pada " + document.lastModified);
+    ///->        
+    </script>
+    
+    <body>
+    </body>
+</html>
