@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Aplikasi Kalkulator Sederhana</title>
+    </head>
+    <body>  
+        <form name="calculator">
+            <table>
+                <caption>Kalkulator Sederhana</caption>
+                <tr>
+                    <td>Bilangan 1</td>
+                    <td>:</td>
+                    <td>
+                        <input type="number" id="bil1" name="bilangan1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Bilangan 2</td>
+                    <td>:</td>
+                    <td>
+                        <input type="number" id="bil2" name="bilangan2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hasil</td>
+                    <td>:</td>
+                    <td>
+                        <input type="number" id="hasil" name="hasil">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align-text="center">
+                     <input class="tombol" type="button" onclick="tambah()" value="  +  ">
+                     <input class="tombol" type="button" onclick="kurang()" value="  -  ">
+                     <input class="tombol" type="button" onclick="kali()" value="  *  ">
+                     <input class="tombol" type="button" onclick="bagi()" value="  /  ">
+                    </td>
+                   </tr>
+            </table>
+        </form>      
+    </body>
+    <script language="Javascript">
+        //<!–
+        function tambah(){
+            bil1=eval(document.getElementById("bil1").value);
+            bil2=eval(document.getElementById("bil2").value);
+            hasil= bil1+bil2;
+            document.getElementById("hasil").value=hasil;
+        }
+
+        function kurang(){
+            bil1=eval(document.getElementById("bil1").value);
+            bil2=eval(document.getElementById("bil2").value);
+            hasil= bil1-bil2;
+            document.getElementById("hasil").value=hasil;
+        }
+
+        function kali(){
+            bil1=eval(document.getElementById("bil1").value);
+            bil2=eval(document.getElementById("bil2").value);
+            hasil= bil1*bil2;
+            document.getElementById("hasil").value=hasil;
+        }
+
+        function bagi(){
+            bil1=eval(document.getElementById("bil1").value);
+            bil2=eval(document.getElementById("bil2").value);
+            hasil= bil1/bil2;
+            document.getElementById("hasil").value=hasil;
+        }
+
+        document.write("Dimodifikasi terakhir pada " + document.lastModified);
+        //–> 
+    </script>
+</html>
