@@ -37,8 +37,3 @@ h1, p {
 img {
     height: 250px;    
 }
-
-.section-title {
-    /* Property border-bottom digunakan untuk menerapkan batas ke semua sisi */
-    border-bottom: 2px solid #dee7ec;
-}
