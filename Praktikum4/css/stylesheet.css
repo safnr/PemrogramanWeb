@@ -1,0 +1,44 @@
+html {
+    background-color: #272730;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    text-align: center;
+  }  
+/* Bagian Main Class */
+.main {    
+    padding: 100px 80px;
+    height: 600px;
+    background-color: #272730;  
+}
+
+h1, p {
+    color: #dee7ec;
+}
+
+.copy-container span {
+    color: #f86161;
+}
+
+.contents {
+    background-color: #272730;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.contents-item {
+    float: left;
+    text-align: center;
+    padding-right: 40px;
+}
+
+img {
+    height: 250px;    
+}
+
+.section-title {
+    /* Property border-bottom digunakan untuk menerapkan batas ke semua sisi */
+    border-bottom: 2px solid #dee7ec;
+}
