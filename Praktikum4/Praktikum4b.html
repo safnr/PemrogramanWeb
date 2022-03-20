@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $( "#kotak1" ).dblclick(function() {
+            var color = $( this ).css( "background-color", "firebrick" );
+        });
+        $( "#kotak2" ).dblclick(function() {
+            var color = $( this ).css( "background-color", "burlywood" );
+        });
+        $( "#kotak3" ).dblclick(function() {
+            var color = $( this ).css( "background-color", "khaki" );
+        });
+        $( "#kotak4" ).dblclick(function() {
+            var color = $( this ).css( "background-color", "cadetblue" );
+        });
+    });
+    </script>       
+      
+    <title>Double Click Event</title>
+    <link rel="stylesheet" href="./css/stylesheet_p4b.css">
+    <style type="text/css">
+
+    </style>       
+
+  </head>
+  <body>
+    <div class="main">
+        <div class="copy-container">
+            <h1>
+                Klik 2X Pada Setiap <span>Kotak</span> Untuk Mengubah Warnanya!!
+            </h1>
+            </div>
+        <div class="contents">
+            <div class="box" id="kotak1"></div>
+            <div class="box" id="kotak2"></div>
+            <div class="box" id="kotak3"></div>
+            <div class="box" id="kotak4"></div>         
+        </div>
+    </div>    
+  </body>
+</html>

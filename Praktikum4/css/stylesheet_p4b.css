@@ -1,0 +1,51 @@
+html {
+    background-color: #272730;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    text-align: center;
+  }  
+/* Bagian Main Class */
+.main {    
+    padding: 100px 80px;
+    height: 600px;
+    background-color: #272730;  
+}
+
+h1, p {
+    color: #dee7ec;
+}
+
+.copy-container span {
+    color: #f86161;
+}
+
+.contents {
+    background-color: #272730;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.contents .box {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.box {
+    float: left;
+    text-align: center;
+    padding-right: 40px;
+}
+
+#kotak1, #kotak2, #kotak3, #kotak4 {
+    width: 100px;
+    height: 100px   ;
+    background: lightyellow;
+    border: 1px solid black;
+    padding: 5px;
+}
