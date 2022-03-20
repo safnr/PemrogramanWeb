@@ -1,60 +1,54 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
-        <script type="text/javascript">
-        $(document).ready(function(){
-            $("#hide1").click(function(){
-                $("#kucing1").fadeOut("slow");
-            });
-            $("#show1").click(function(){
-                $("#kucing1").fadeIn("slow");
-
-            });
-
-            $("#hide2").click(function(){
-                $("#kucing2").fadeOut("slow");
-            });
-            $("#show2").click(function(){
-                $("#kucing2").fadeIn("slow");
-
-            });
+    <head>    
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#hide1").click(function(){
+            $("#ashton1").fadeOut("slow");
         });
-        </script>   
-        <style type="text/css">
-            #image {
-                position: relative;
-                overflow: hidden;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            #image, #kucing1, #kucing2 {
-                position: relative;
-                width: 300px;
-                height: auto;
-                padding: 5px;
-            }
-            html {
-                background-color: rgb(41, 41, 66);
-            }
-            body {
-                text-align: center;
-                margin: 25px;
-            }
-        </style>                
-    </head>
-    <body>
-        <button id="hide1">Sembunyikan</button>
-        <button id="show1">Tampilkan</button>
-        <br /><br />
-        <button id="hide2">Sembunyikan</button>
-        <button id="show2">Tampilkan</button>
-        <div id="image">
-            <img id="kucing1" 
-            src="./images/CatStudying1.jpeg" alt="Profile-Image"/>
-            <br>
-            <img id="kucing2" 
-            src="./images/CatStudying2.jpeg" alt="Profile-Image"/>
+        $("#show1").click(function(){
+            $("#ashton1").fadeIn("slow");
+
+        });
+
+        $("#hide2").click(function(){
+            $("#ashton2").fadeOut("slow");
+        });
+        $("#show2").click(function(){
+            $("#ashton2").fadeIn("slow");
+
+        });
+    });
+    </script>       
+      
+    <title>Tata Letak</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+  </head>
+  <body>
+    <div class="main">
+        <div class="copy-container">
+            <h1>
+                Choose your favorite <span>Ashton</span> !!
+            </h1>
+            <button id="hide1">Sembunyikan</button>
+            <button id="show1">Tampilkan</button>
+            <br /><br />
+            <button id="hide2">Sembunyikan</button>
+            <button id="show2">Tampilkan</button>
+            <br /><br />
+            </div>
+        <div class="contents">
+            <h3 class="section-title"></h3>
+            <div class="contents-item">
+                <p>Sweet Type</p>
+                <img id="ashton1" src="./images/Ashton Griffin 1.png" alt="Ashton Griffin">
+            </div>
+            <div class="contents-item">
+                <p>Arrogant Type</p>
+                <img id="ashton2" src="./images/Ashton Griffin 2.png" alt="Ashton Griffin">
+            </div>
         </div>
-    </body>
+    </div>    
+  </body>
 </html>
