@@ -9,7 +9,7 @@ body {
 /* Bagian Main Class */
 .main {    
     padding: 100px 80px;
-    height: 600px;
+    height: 300px;
     background-color: #272730;  
 }
 
@@ -23,13 +23,13 @@ h1, p {
 
 .contents {
     background-color: #272730;
-    height: 500px;
+    height: 300px;
     display: flex;
     justify-content: center;
 }
 
 .contents .box {
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,9 +43,9 @@ h1, p {
 }
 
 #kotak1, #kotak2, #kotak3, #kotak4 {
-    width: 100px;
-    height: 100px   ;
-    background: lightyellow;
+    width: 120px;
+    height: 120px   ;
+    background: #FFFFB7;
     border: 1px solid black;
     padding: 5px;
 }
