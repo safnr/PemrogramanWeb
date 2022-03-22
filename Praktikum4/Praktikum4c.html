@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("#kotak").fadeOut("slow");
+        });
+        $("#show1").click(function(){
+            $("#kotak").fadeIn("slow");
+        });
+        $("#show2").click(function(){
+            $("#kotak").fadeTo("slow", 0.3);
+        });
+    });
+    </script>       
+      
+    <title>Effect</title>
+    <link rel="stylesheet" href="./css/stylesheet_p4c.css"> 
+  </head>
+  <body>
+    <div class="main">
+        <div class="copy-container">
+            <h1>
+                Klik <span>Tombol</span> di bawah dan lihat perbedaannya!!
+            </h1>
+            </div>
+        <div class="contents">
+            <div class="box" id="kotak"></div>      
+        </div>
+        <button id="hide">Fade Out</button>
+        <button id="show1">Fade in</button>
+        <button id="show2">Fade to 0.3</button>
+    </div>    
+  </body>
+</html>
