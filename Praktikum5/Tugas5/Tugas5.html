@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Game dengan Javascript dan HTML5</title>
     <style>
         * {
@@ -16,13 +16,13 @@
     </style>
 </head>
 <body>
-    <canvas id="myCanvas" width="500" height="500"></canvas>   
+    <canvas id="myCanvas" width="500" height="350"></canvas>   
     <script>
-        var canvas = document.getElementById("myCanvas");
+        var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext('2d');
 
         var speed = 10;
-        gameSpeed = 100;
+        var gameSpeed = 100;
         var bird = {
             x : canvas.width / 2,
             y : canvas.height / 2,
@@ -35,20 +35,20 @@
         var gravity = 0.2;
         var bounce = 4;
         var distance = 100;
-        var dir = 'left'
+        var dir = 'left';
 
         document.onkeydown = function(e) {
             if (!e) {
                 e = window.e;
             }
             var code = e.keyCode;
-            if (e.charCode && code ==0){
+            if (e.charCode && codee == 0){
                 code = e.charCode;
             }
             switch (code) {
                 case 37://left
                     if (dir != 'right')
-                    dir = 'left'
+                    dir = 'left';
                     break;
                 case 38:
                     if (dir != 'down')
@@ -73,9 +73,9 @@
             context.fill();
             context.closePath();
 
-            bird.y + bird.vy;
+            bird.y += bird.vy;
             bird.vy += gravity;
-            if (dir=='up'){
+            if (dir =='up') {
                 bird.vy = -bounce;
                 dir = '';
             }
@@ -86,6 +86,7 @@
         }
 
         function makePip() {
+            
             for (p of pip) {
                 context.beginPath();
                 context.rect(p.top.x, p.top.y, p.top.width, p.top.height);
@@ -93,7 +94,7 @@
                 context.fill();
                 context.closePath();
 
-                p.bottom.y = p.top.height + distance;
+                p.bottom.y = p.top.height +distance;
                 p.bottom.height = (canvas.height - p.bottom.y);
 
                 context.beginPath();
@@ -125,7 +126,7 @@
         function isCollideB(b, p) {
             return (
                 (b.x + 10 > p.x) && 
-                (b.x + 10 < p.x + 10) &&
+                (b.x < p.x + 10) &&
                 (b.y > p.y || b.y + 10 > p.y)
             );
         }
@@ -134,7 +135,7 @@
             return (
                 (b.x + 10 > p.x) && 
                 (b.x < p.x + 10) &&
-                (b.y > p.y + p.height)
+                (b.y < p.y + p.height)
             );
         }
 
@@ -156,7 +157,7 @@
                         height : rnd(70,140),
                         width : 10,
                     },
-                    bottom : {
+                    bottom :{
                         x : canvas.width,
                         y : 0,
                         height : rnd(100,160),
@@ -171,6 +172,6 @@
             loop();
         })
     }) ();
-    </script> 
+    </script>
 </body>
 </html>
