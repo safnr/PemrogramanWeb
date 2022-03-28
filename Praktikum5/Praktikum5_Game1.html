@@ -8,6 +8,7 @@
             padding: 0;
             margin: 0;
         }
+        /*Elemen canvas digunakan untuk menggambar grafik, gambar, dan teks*/
         canvas {
             background: #eee;
             display: block;
@@ -67,6 +68,7 @@
 
         var b = 0.8;
         function makeBird() {
+            // Fungsi beginPath() digunakan untuk membuat garis baru
             context.beginPath();
             context.rect(bird.x, bird.y, 10, 10);
             context.fillStyle = "red";
@@ -111,7 +113,9 @@
                 }
 
                 if (isCollideB(bird, p.bottom) || isCollideT(bird, p.top) || bird.y + 10 >= canvas.height) {
+                    // Fungsi alert() digunakan untuk menampilkan sebuah pesan peringatan atau informasi
                     alert('Your Score: '+ score);
+                    // Fungsi reload() digunakan untuk mengulangi game
                     window.location.reload();
                 }
 
@@ -148,6 +152,7 @@
     var frame = 0;
     (function loop(){
         requestAnimationFrame(function() {
+            // Method clearRect() digunakan untuk menghapus gambar
             context.clearRect(0, 0, canvas.width, canvas.height);
             if (frame % gameSpeed == 0){
                 pip.push ({

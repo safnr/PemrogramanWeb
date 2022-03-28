@@ -144,6 +144,7 @@
                         loose();
                     }
                 }
+                
                 if (wall.pos == 'right') {
                     wall.x -= wallSpeed;
                     if ((wall.x + wall.width) <= me.x) {
@@ -248,7 +249,7 @@
             var r = Math.round(Math.random() * (max - min) + min);
             return (r - r % speed);
         }
-        var wallPoss = ['left', 'right', 'top', 'bottom'];
+        var wallPoses = ['left', 'right', 'top', 'bottom'];
         var frame = 0;
         (function loop() {
             requestAnimationFrame (function() {
