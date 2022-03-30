@@ -8,7 +8,7 @@
             padding: 0;
             margin: 0;
         }
-
+        /*Elemen canvas digunakan untuk menggambar grafik, gambar, dan teks*/
         canvas {
             background: #eee;
             display: block;
@@ -17,14 +17,18 @@
     </style>
 </head>
 <body>
+    <!--Elemen canvas digunakan untuk menggambar grafik, gambar, dan teks-->
     <canvas id="myCanvas" width="500" height="350"></canvas>
     <script>
+        // Membuat variabel untuk menampung elemen myCanvas
         var canvas = document.getElementById('myCanvas');
+        // Membuat variabel untuk menampung objek context
         var context = canvas.getContext('2d');
-
-        var speed = 10;
+        // Membuat variabel untuk menampung nilai kecepatan
+        var speed = 10;        
+        // Membuat variabel untuk menampung nilai kecepatan permainan
         var gameSpeed = 1;
-
+        // Membuat variabel untuk menampung objek player
         var me = {
             x: canvas.width / 2 - 5,
             y: canvas.height / 2 - 5,
@@ -32,8 +36,11 @@
             height: 10
         }
 
+        // Membuat variabel untuk menampung objek peluru
         var bullets = [];
+        // Membuat variabel untuk panjang tembok
         var wallLength = 200;
+        // Membuat variabel untuk objek tembok
         var walls = {
             'left': {
                 x: 10,
@@ -65,11 +72,16 @@
             },
         };
 
+        // Membuat variabel untuk menampung nilai gravitasi
         var gravity = 0.2;
+        // Membuat variabel untuk memantulkan objek
         var bounce = 4;
+        // Membuat variabel untuk menampung jarak antar objek
         var distance = 70;
+        // Membuat variabel untuk menampung arah gerak
         var dir = '';
 
+        // Membuat fungsi untuk mengatur arah gerak player
         document.onkeyup = function (e) {
             if (!e) {
                 e = window.e;
@@ -127,17 +139,21 @@
             }
         }
 
+        // Membuat variel untuk kecepatan tembok
         var wallSpeed = 0.2;
+        // Membuat variabel untuk kecepatan pantulan
         var walletBackward = 20;
+        // Membuat variabel untuk menampung nilai score
         var score = 0;
+        // Membuat fungsi untuk membuat tembok
         function makeWalls() {
             for (var index in walls) {
                 var wall = walls[index];
-                context.beginPath();
-                context.rect (wall.x, wall.y, wall.width, wall.height);
-                context.fillStyle = "blue";
-                context.fill();
-                context.closePath();
+                context.beginPath(); //Method untuk membuat garis baru
+                context.rect (wall.x, wall.y, wall.width, wall.height); //Method Untuk menggambar titik pada canvas
+                context.fillStyle = "blue"; //Method untuk mengatur warna, gradien, atau pola pada canvas
+                context.fill(); //Metode untuk mengisi semua elemen dalam array dengan nilai statis
+                context.closePath(); //Metode untuk menggambar garis dari titik terakhir ke titik awal
                 if (wall.pos == 'left') {
                     wall.x += wallSpeed;
                     if ((wall.x + wall.width) >= me.x) {
@@ -168,8 +184,9 @@
                 // console.log(walls[wall]);                        
             }
         }
-
+        // Membuat fungsi untuk menampilkan score akhir saat player telah kalah
         function loose() {
+            // Fungsi alert() digunakan untuk menampilkan sebuah pesan peringatan atau informasi
             alert('You Lose! score: ' + score);
         }
         var collid = false;
@@ -232,11 +249,13 @@
                 }
             }
         }
-
+        
+        // Membuat fungsi untuk menghapus objek yang sudah keluar dari layar
         function removeBullet (index) {
             bullets.splice(index, 1);
         }
 
+        // Membuat fungsi untuk objek player
         function makeMe() {
             context.beginPath();
             context.rect(me.x, me.y, me.width, me.height);
@@ -245,31 +264,36 @@
             context.closePath();
         }
 
+        // Membuat fungsi untuk rnd
         function rnd(min, max) {
             var r = Math.round(Math.random() * (max - min) + min);
             return (r - r % speed);
         }
+        // Membuat variabel untuk posisi dinding
         var wallPoses = ['left', 'right', 'top', 'bottom'];
+        // Membuat variabel untuk frame
         var frame = 0;
+        // Membuat fungsi untuk melakukan perulangan
         (function loop() {
             requestAnimationFrame (function() {
                 context.clearRect(0, 0, canvas.width, canvas.height);
-                makeMe();
-                makeBullet();
-                makeWalls();
+                makeMe(); //Memanggil fungsi makeMe
+                makeBullet(); //Memanggil fungsi makeBullet
+                makeWalls(); //Memanggil fungsi makeWalls
                 if (score % 50 == 0) {
                     walletBackward -= 1;
                     wallSpeed += 0.1;
                     score += 1;
-                    console.log(score);
-                    console.log(wallSpeed);
-                    console.log(walletBackward);
+                    console.log(score); //Jumlah score
+                    console.log(wallSpeed); //Kecepatan dinding
+                    console.log(walletBackward); //Kecepatan pantulan
                 }   
-                
+                // Pernyataan dieksekusi apabila 
                 if (frame % gameSpeed == 0) {
                     frame++;
                 }
-                loop();
+
+                loop(); //Memanggil fungsi loop
             })
         }) ();
     </script>

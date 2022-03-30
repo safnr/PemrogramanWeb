@@ -17,13 +17,18 @@
     </style>
 </head>
 <body>
+    <!--Elemen canvas digunakan untuk menggambar grafik, gambar, dan teks-->    
     <canvas id="myCanvas" width="500" height="350"></canvas>   
     <script>
+        // Membuat variabel untuk menampung elemen myCanvas
         var canvas = document.getElementById('myCanvas');
+        // Membuat variabel untuk menampung objek context
         var context = canvas.getContext('2d');
-
+        // Membuat variabel untuk menampung nilai kecepatan
         var speed = 10;
+        // Membuat variabel untuk menampung nilai kecepatan permainan
         var gameSpeed = 100;
+        // Membuat variabel untuk menampung objek burung/player
         var bird = {
             x : canvas.width / 2,
             y : canvas.height / 2,
@@ -31,13 +36,19 @@
             vy : 1
         };
 
+        // Membuat variabel untuk menampung objek peluru
         var pip = [];
 
+        // Membuat variabel untuk menampung nilai gravitasi
         var gravity = 0.2;
+        // Membuat variabel untuk menampung nilai lompatan
         var bounce = 4;
+        // Membuat variabel untuk menampung jarak antar objek
         var distance = 100;
+        // Membuat variabel untuk menampung arah gerak
         var dir = 'left';
 
+        // Membuat fungsi untuk mengatur arah gerak player
         document.onkeydown = function(e) {
             if (!e) {
                 e = window.e;
@@ -66,14 +77,15 @@
             }
         }
 
+
         var b = 0.8;
+        // Membuat fungsi untuk objek burung
         function makeBird() {
-            // Fungsi beginPath() digunakan untuk membuat garis baru
-            context.beginPath();
-            context.rect(bird.x, bird.y, 10, 10);
-            context.fillStyle = "red";
-            context.fill();
-            context.closePath();
+            context.beginPath(); //Method untuk membuat garis baru
+            context.rect(bird.x, bird.y, 10, 10); //Method Untuk menggambar titik pada canvas
+            context.fillStyle = "red"; //Method Untuk menggambar titik pada canvas
+            context.fill(); //Metode untuk mengisi semua elemen dalam array dengan nilai statis
+            context.closePath(); //Metode untuk menggambar garis dari titik terakhir ke titik awal
 
             bird.y += bird.vy;
             bird.vy += gravity;
@@ -86,9 +98,9 @@
                 // dir = 'up';
             }
         }
-
-        function makePip() {
-            
+        
+        // Membuat fungsi untuk tiang
+        function makePip() {            
             for (p of pip) {
                 context.beginPath();
                 context.rect(p.top.x, p.top.y, p.top.width, p.top.height);
@@ -119,8 +131,8 @@
                     window.location.reload();
                 }
 
-                if (score % 10 == 0) {
-                    console.log(distance);
+                if (score % 10 == 0) {                    
+                    console.log(distance); // Jarak antar objek ditambahkan
                     score += 1;
                     distance -= 5;
                 }
@@ -147,9 +159,12 @@
             var r = Math.round(Math.random() * (max - min) + min);
             return (r - r % speed);
         }
-
+    
+    // Membuat variabel untuk menampung nilai skor
     var score = 0;
+    // Membuat variabel untuk frame
     var frame = 0;
+    // Membuat fungsi untuk melakukan perulangan
     (function loop(){
         requestAnimationFrame(function() {
             // Method clearRect() digunakan untuk menghapus gambar
@@ -171,10 +186,10 @@
                 });
                 score++;
             }
-            makeBird();
-            makePip();
-            frame++;
-            loop();
+            makeBird(); //Memanggil fungsi makeBird
+            makePip(); //Memanggil fungsi makePip
+            frame++; //Menambahkan nilai frame
+            loop(); //Memanggil fungsi loop
         })
     }) ();
     </script>
