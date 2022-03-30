@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Flappy Bird</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        canvas {
+            background: #eee;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="700px" height="394px"></canvas>
+    <script>
+        // Variabel
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        var gap = 85;
+        var constant;
+
+        var bX = 10;
+        var bY = 150;
+        var gravity = 0.5;
+        var bounce = 4;
+        var distance = 100;
+        var dir = 'left';
+
+        var score = 0;
+        var frame = 0;
+
+        // Variabel Gambar
+        var bird = new Image();
+        var bg = new Image();
+        var fg = new Image();
+        var pipNorth = new Image();
+        var pipSouth = new Image();
+
+        // Source Gambar
+        bird.src = "http://prendacodeclub.com/wp-content/uploads/2019/12/bird.png";
+        bg.src = "https://mocah.org/thumbs/514870-8-Bit-Minimalist.png";
+        pipNorth.src = "http://prendacodeclub.com/wp-content/uploads/2019/12/pipeNorth.png";
+        pipSouth.src = "http://prendacodeclub.com/wp-content/uploads/2019/12/pipeSouth.png";
+        
+        // Variabel Audio
+        var fly = new Audio();
+        var scor = new Audio();
+        
+        fly.src = "http://prendacodeclub.com/wp-content/uploads/2019/12/fly.mp3";
+        scor.src = "http://prendacodeclub.com/wp-content/uploads/2019/12/score.mp3";
+        
+        // Koordinat Pip
+        var pip = [];
+        pip[0] = {
+            x : canvas.width,
+            y : 0
+        };
+
+        // On key down
+        document.addEventListener("keydown",moveUp);
+        function moveUp(){
+            bY -= 25;
+            fly.play();
+        }
+
+        // Menampilkan Gambar
+        function makePip() {
+            context.drawImage(bg,0,0);
+
+            for (var i = 0; i < pip.length; i++) {
+                constant = pipNorth.height + gap;
+                context.drawImage(pipNorth,pip[i].x,pip[i].y);
+                context.drawImage(pipSouth,pip[i].x,pip[i].y+constant);
+
+                pip[i].x--;
+
+                if (pip[i].x == 125) {
+                    pip.push({
+                        x : canvas.width,
+                        y : Math.floor(Math.random() * pipNorth.height) - pipNorth.height
+                    });
+                }
+
+                if (bX + bird.width >= pip[i].x && bX <= pip[i].x + pipNorth.width && (bY <= pip[i].y + pipNorth.height || bY+bird.height >= pip[i].y+constant) || bY + bird.height >= canvas.height - fg.height) {
+                    window.location.reload();
+                }
+
+                if (pip[i].x == 5) {
+                    score++;
+                    scor.play();
+                }
+            }
+            //
+            context.drawImage(fg,0,canvas.height - fg.height);
+            context.drawImage(bird,bX,bY);
+            bY += gravity;
+
+            context.fillStyle = "#000";
+            context.font = "20px Verdana";
+            context.fillText("Score : " + score, 10, canvas.height - 20);
+
+            requestAnimationFrame(makePip);
+        }
+
+        //
+        makePip();
+   </script>
+</body>
+</html>
