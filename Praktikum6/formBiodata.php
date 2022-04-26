@@ -4,12 +4,9 @@
     <title></title>
 </head>
 <body>
+    <h2>Biodata</h2>
     <form method="POST" action="hasilLogin.php">
         <table align="center" border="1" cellpadding="0">
-            <tr align="center">
-                <td>
-                    <h2>Form Biodata</h2>
-                </td>
             </tr>
             <tr>
                 <td>
