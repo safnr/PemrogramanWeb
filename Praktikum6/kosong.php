@@ -1,3 +1,3 @@
 <?php
-echo "Data kosong"
+echo "<center>Data Masih Tidak Lengkap!";
 ?>
