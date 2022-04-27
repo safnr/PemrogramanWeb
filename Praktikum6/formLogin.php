@@ -4,7 +4,7 @@
     <title>Form Login</title>
 </head>
 <body>
-    <form method="POST" action="hasilKirim.php">
+    <form method="POST" action="hasilLogin.php">
         <h2 align="center">Form Login</h2>
         <table width="400" align="center" cellpadding="2" cellspacing="2">
             <tr>
