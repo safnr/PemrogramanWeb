@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Biodata</title>
+    <title>Info Login</title>
 </head>
 <body>
     <?php

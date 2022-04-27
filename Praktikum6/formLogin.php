@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title></title>
+    <title>Form Login</title>
 </head>
 <body>
     <form method="POST" action="hasilKirim.php">
+        <h2 align="center">Form Login</h2>
         <table width="400" align="center" cellpadding="2" cellspacing="2">
             <tr>
                 <td width="130">Nama</td>

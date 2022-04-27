@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title></title>
+    <title>Form Biodata</title>
 </head>
 <body>
     <form method="POST" action="hasilBiodata.php">
         <table align="center" border="1" cellpadding="0">
             <tr>
                 <td align="center">
-                    <h2>Input Biodata</h2>
+                    <h2>Form Biodata</h2>
                 </td>
             </tr>
             <tr>
