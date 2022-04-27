@@ -4,11 +4,11 @@
     <title></title>
 </head>
 <body>
-    <form method="POST" action="hasilLogin.php">
+    <form method="POST" action="hasilBiodata.php">
         <table align="center" border="1" cellpadding="0">
             <tr>
                 <td align="center">
-                    <h2>Biodata</h2>
+                    <h2>Input Biodata</h2>
                 </td>
             </tr>
             <tr>
