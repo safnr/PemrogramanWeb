@@ -42,6 +42,6 @@
             <td>Alamat</td>
             <td> <?php echo $alamat ?> </td>
         </tr>
- </table>
+    </table>
 </body>
 </html>
