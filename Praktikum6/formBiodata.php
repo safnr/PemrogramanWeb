@@ -119,7 +119,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <input type="submit" name="btnLogin" value="Login">
+                        <input type="submit" name="btnInput" value="Input">
                         <input type="reset" name="reset" value="Reset">
                     </td>
                 </tr>
