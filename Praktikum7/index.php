@@ -33,11 +33,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
- 
-    <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
- 
+    <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"> 
     <title>Buku Tamu</title>
 </head>
 <body>
@@ -46,7 +42,7 @@ if (isset($_POST['submit'])) {
     </div>
  
     <div class="container">
-        <form action="" method="POST" class="login-email">
+        <form action="bukuTamu.php" method="POST" class="login-email">
             <p class="bukuTamu-text" style="font-size: 2rem; font-weight: 800;">Buku Tamu</p>
             <div class="input-group">
                 <input type="text" placeholder="Nama" name="nama" value="<?php echo $nama; ?>" required>
