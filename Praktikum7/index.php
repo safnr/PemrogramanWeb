@@ -14,16 +14,16 @@ if (isset($_POST['submit'])) {
     $nama = ($_POST['nama']);
     $email = $_POST['email'];
     $isi = $_POST['isi'];
- 
-    $sql = "SELECT * FROM tb_pegawai WHERE $nama='$nama' AND email='$email' AND isi='$isi'";
-    $result = mysqli_query($conn, $sql);
-    if ($result->num_rows > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $_SESSION['username'] = $row['username'];
-        header("Location: bukuTamu.php");
+
+    $sql = "INSERT INTO tb_pegawai (id_bt, nama, email, isi)
+    VALUES ('', '$nama', '$email', '$isi')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('New record created successfully')</script>";
     } else {
-        echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
+        echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }
+    mysqli_close($conn); 
 }
  
 ?>
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
  
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
  
     <title>Buku Tamu</title>
 </head>
@@ -59,6 +59,9 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="input-group">
                 <button name="submit" class="btn">Submit</button>
+            </div>
+            <div class="input-group">
+                <button name="reset" class="btn" type="reset" value="Reset">Reset</button>
             </div>
         </form>
     </div>
