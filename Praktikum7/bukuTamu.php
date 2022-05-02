@@ -6,7 +6,7 @@ error_reporting(0);
  
 session_start();
  
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['nama'])) {
     header("Location: bukuTamu.php");
 }
  
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
     mysqli_close($conn); 
 }
 
-if(isset($_POST['btnSubmit'])){
+if(isset($_POST['Submit'])){
     $nama = $_POST['nama'];
     $email = $_POST['email'];
     $isi = $_POST['isi'];
@@ -65,7 +65,13 @@ if(isset($_POST['btnSubmit'])){
                 <input type="text" placeholder="Isi" name="isi" value="<?php echo $isi; ?>" required>
             </div>
             <div class="input-group">
-                <button name="" class="btn">Submit</button>
+                <button name="save" class="btn">Save</button>
+            </div>
+            <div class="input-group">
+                <button name="delete" class="btn">Delete</button>
+            </div>
+            <div class="input-group">
+                <button name="edit" class="btn">Edit</button>
             </div>
             <div class="input-group">
                 <button name="reset" class="btn" type="reset" value="Reset">Reset</button>
