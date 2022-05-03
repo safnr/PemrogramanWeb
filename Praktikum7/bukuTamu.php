@@ -66,7 +66,6 @@ if (isset($_POST['edit'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></link>
     <title>Buku Tamu</title>
 </head>
 <body>
@@ -102,13 +101,8 @@ if (isset($_POST['edit'])) {
     </div>
 </body>
 <footer>
-    <!-- =========== COPYRIGHT =========== -->
     <div class="navbar">
-        <p id="copyright">
-            <i class="fa-regular fa-copyright"></i>
-            <span>safnr</span>
-            <span>2022</span>
-        </p>
+        <p class="copyright">Copyright &copy; 2022 | safnr</a></p>
     </div>
 </footer>
 </html>

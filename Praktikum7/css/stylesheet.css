@@ -16,6 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
  
 .container {
@@ -61,7 +62,6 @@ body {
 }
  
 .container .login-email .input-group .btn {
-    display: block;
     width: 40%;
     padding: 10px 20px;
     text-align: center;
@@ -74,6 +74,13 @@ body {
     cursor: pointer;
     transition: .3s;
     float: left;
+    overflow: hidden;
+}
+
+.input-group {
+    float: left;
+    text-align: center;
+    padding-right: 0px;
 }
  
 .container .login-email .input-group .btn:hover {
@@ -83,25 +90,20 @@ body {
 }
 
 footer {
-    padding-top: 10%;
-    padding-right: 0%;
-    padding-bottom: 0%;
-    padding-left: 0%;
-    font-size: 10px;
-    position: absolute;
-    bottom: 0;
+    height: 40px;
     width: 100%;
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
 }
 
-footer span {
-    
-}
-
-#copyright {
-    padding-top: 0%;
-    padding-right: 0%;
-    padding-bottom: 0%;
-    padding-left: 5%;
+p.copyright {
+    width: 100%;
+    color: #fff;
+    line-height: 40px;
+    font-size: 0.7em;
+    text-align: center;
+    bottom:0;
 }
  
 @media (max-width: 430px) {
