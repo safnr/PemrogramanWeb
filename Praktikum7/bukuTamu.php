@@ -5,10 +5,6 @@ include 'config.php';
 error_reporting(0);
  
 session_start();
- 
-if (isset($_SESSION['nama'])) {
-    header("Location: bukuTamu.php");
-}
 
 if (isset($_POST['save'])) {
     $nama = ($_POST['nama']);
@@ -20,7 +16,7 @@ if (isset($_POST['save'])) {
     END";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('New save point created successfully')</script>";
+        echo "<script>alert('Save point created successfully')</script>";
     } else {
         echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }
@@ -32,7 +28,7 @@ if (isset($_POST['delete'])) {
     $email = $_POST['email'];
     $isi = $_POST['isi'];
 
-    $sql = "DELETE tb_pegawai
+    $sql = "DELETE FROM tb_pegawai
     WHERE id_bt = '$id_bt' or
     nama = '$nama' or
     email = '$email' or
@@ -51,8 +47,9 @@ if (isset($_POST['edit'])) {
     $email = $_POST['email'];
     $isi = $_POST['isi'];
 
-    $sql = "UPDATE tb_pegawai (id_bt, nama, email, isi)
-    VALUES ('', '$nama', '$email', '$isi')";
+    $sql = "UPDATE tb_pegawai 
+    SET nama = '$nama', email = '$email', isi = '$isi'
+    WHERE id_bt = '$id_bt'";
 
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert(' successfully')</script>";
@@ -69,6 +66,7 @@ if (isset($_POST['edit'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></link>
     <title>Buku Tamu</title>
 </head>
 <body>
@@ -103,4 +101,14 @@ if (isset($_POST['edit'])) {
         </form>
     </div>
 </body>
+<footer>
+    <!-- =========== COPYRIGHT =========== -->
+    <div class="navbar">
+        <p id="copyright">
+            <i class="fa-regular fa-copyright"></i>
+            <span>safnr</span>
+            <span>2022</span>
+        </p>
+    </div>
+</footer>
 </html>

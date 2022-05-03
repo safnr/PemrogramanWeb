@@ -34,6 +34,7 @@ if (isset($_POST['submit'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></link>
     <title>Buku Tamu</title>
 </head>
 <body>
@@ -61,5 +62,16 @@ if (isset($_POST['submit'])) {
             </div>
         </form>
     </div>
+</div>
 </body>
+<footer>
+    <!-- =========== COPYRIGHT =========== -->
+    <div class="navbar">
+        <p id="copyright">
+            <i class="fa-regular fa-copyright"></i>
+            <span class>safnr</span>
+            <span>2022</span>
+        </p>
+    </div>
+</footer>
 </html>

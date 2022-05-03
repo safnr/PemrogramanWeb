@@ -41,7 +41,7 @@ body {
 .container .login-email .input-group {
     width: 100%;
     height: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 20px
 }
  
 .container .login-email .input-group input {
@@ -61,7 +61,7 @@ body {
 }
  
 .container .login-email .input-group .btn {
-    display: inline-block;
+    display: block;
     width: 40%;
     padding: 10px 20px;
     text-align: center;
@@ -73,16 +73,35 @@ body {
     color: #FFF;
     cursor: pointer;
     transition: .3s;
-    margin-right: 20px;
+    float: left;
 }
  
 .container .login-email .input-group .btn:hover {
     transform: translateY(-5px);
-    background: #272730;
+    background: #dee7ec;
+    color: #272730;
 }
 
-#buttons {
-    float: right;
+footer {
+    padding-top: 10%;
+    padding-right: 0%;
+    padding-bottom: 0%;
+    padding-left: 0%;
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer span {
+    
+}
+
+#copyright {
+    padding-top: 0%;
+    padding-right: 0%;
+    padding-bottom: 0%;
+    padding-left: 5%;
 }
  
 @media (max-width: 430px) {
