@@ -73,12 +73,16 @@ body {
     color: #FFF;
     cursor: pointer;
     transition: .3s;
-    float: left;
+    margin-right: 20px;
 }
  
 .container .login-email .input-group .btn:hover {
     transform: translateY(-5px);
     background: #272730;
+}
+
+#buttons {
+    float: right;
 }
  
 @media (max-width: 430px) {

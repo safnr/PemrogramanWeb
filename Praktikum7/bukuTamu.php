@@ -9,34 +9,58 @@ session_start();
 if (isset($_SESSION['nama'])) {
     header("Location: bukuTamu.php");
 }
- 
-if (isset($_POST['submit'])) {
+
+if (isset($_POST['save'])) {
     $nama = ($_POST['nama']);
     $email = $_POST['email'];
     $isi = $_POST['isi'];
 
-    $sql = "INSERT INTO tb_pegawai (id_bt, nama, email, isi)
-    VALUES ('', '$nama', '$email', '$isi')";
+    $sql = "BEGIN
+    SAVE POINT my_save_point;
+    END";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('New record created successfully')</script>";
+        echo "<script>alert('New save point created successfully')</script>";
     } else {
         echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }
     mysqli_close($conn); 
 }
 
-if(isset($_POST['Submit'])){
-    $nama = $_POST['nama'];
+if (isset($_POST['delete'])) {
+    $nama = ($_POST['nama']);
     $email = $_POST['email'];
     $isi = $_POST['isi'];
-    $tanggal = date("d-m-Y");
-    $jam = date("H:i:s");
-    $tampil = "Nama : $nama <br> Email : $email <br> Isi : $isi <br> Tanggal : $tanggal <br> Jam : $jam";
-    echo $tampil;
+
+    $sql = "DELETE tb_pegawai
+    WHERE id_bt = '$id_bt' or
+    nama = '$nama' or
+    email = '$email' or
+    isi = '$isi'";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert('Delete successfully')</script>";
+    } else {
+        echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
+    }
+    mysqli_close($conn); 
 }
 
+if (isset($_POST['edit'])) {
+    $nama = ($_POST['nama']);
+    $email = $_POST['email'];
+    $isi = $_POST['isi'];
 
+    $sql = "UPDATE tb_pegawai (id_bt, nama, email, isi)
+    VALUES ('', '$nama', '$email', '$isi')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "<script>alert(' successfully')</script>";
+    } else {
+        echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
+    }
+    mysqli_close($conn); 
+}
 ?>
  
 <!DOCTYPE html>
