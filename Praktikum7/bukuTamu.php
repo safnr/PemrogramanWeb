@@ -85,18 +85,32 @@ if (isset($_POST['edit'])) {
             <div class="input-group">
                 <input type="text" placeholder="Isi" name="isi" value="<?php echo $isi; ?>" required>
             </div>
-            <div class="input">
-                <button name="save" class="btn">Save</button>
-            </div>
-            <div class="input">
-                <button name="delete" class="btn">Delete</button>
-            </div>
-            <div class="input">
-                <button name="edit" class="btn">Edit</button>
-            </div>
-            <div class="input">
-                <button name="reset" class="btn" type="reset" value="Reset">Reset</button>
-            </div>
+            <table width="700" align="center" cellpadding="0" cellspacing="2">
+                <tr>
+                    <td>                        
+                        <div class="input">
+                            <button name="save" class="btn">Save</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input">
+                            <button name="delete" class="btn">Delete</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>                        
+                        <div class="input">
+                            <button name="edit" class="btn">Edit</button>
+                        </div>
+                    </td>
+                    <td>                        
+                        <div class="input">
+                            <button name="reset" class="btn" type="reset" value="Reset">Reset</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 </body>

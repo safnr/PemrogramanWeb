@@ -62,7 +62,7 @@ body {
 }
  
 .container .login-email .input .btn {
-    width: 80%;
+    width: 90%;
     padding: 10px 20px;
     text-align: center;
     border: none;
@@ -101,6 +101,10 @@ table {
     border-spacing: 0;
     width: 100%;
 }
+
+table, th, td {
+    padding: 5px;
+  }
 
 footer {
     height: 40px;
