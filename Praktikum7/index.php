@@ -12,10 +12,12 @@ if (isset($_POST['submit'])) {
     $isi = ($_POST['isi']);
 
     $sql = "INSERT INTO tb_pegawai
-    VALUES ('', '$nama', '$email', '$isi')";
+    VALUES ('$nama', '$email', '$isi','')";
 
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Data Telah Ditambahkan')</script>";
+        $_SESSION['nama'] = $row['nama'];
+        header("Location: bukuTamu.php");
     } else {
         echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }

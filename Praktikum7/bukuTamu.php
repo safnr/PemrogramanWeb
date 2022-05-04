@@ -6,17 +6,16 @@ error_reporting(0);
  
 session_start();
 
-if (isset($_POST['save'])) {
-    $nama = ($_POST['nama']);
-    $email = $_POST['email'];
-    $isi = $_POST['isi'];
+$nama = $_POST['nama'];
+$email = $_POST['email'];
+$isi = $_POST['isi'];
 
-    $sql = "BEGIN
-    SAVE POINT my_save_point;
-    END";
+if (isset($_POST['save'])) {
+
+    $sql = "mysqli_savepoint(mysqli $mysql, string $name): bool";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Save point created successfully')</script>";
+        echo "<script>alert('Save Point Telah Dibuat')</script>";
     } else {
         echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }
@@ -25,17 +24,13 @@ if (isset($_POST['save'])) {
 
 if (isset($_POST['delete'])) {
     $nama = ($_POST['nama']);
-    $email = $_POST['email'];
-    $isi = $_POST['isi'];
+    $email = ($_POST['email']);
+    $isi = ($_POST['isi']);
 
-    $sql = "DELETE FROM tb_pegawai
-    WHERE id_bt = '$id_bt' or
-    nama = '$nama' or
-    email = '$email' or
-    isi = '$isi'";
+    $sql = "DELETE FROM tb_pegawai WHERE nama = '$nama'";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Delete successfully')</script>";
+        echo "<script>alert('Data Telah Dihapus')</script>";
     } else {
         echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }
@@ -44,19 +39,19 @@ if (isset($_POST['delete'])) {
 
 if (isset($_POST['edit'])) {
     $nama = ($_POST['nama']);
-    $email = $_POST['email'];
-    $isi = $_POST['isi'];
+    $email = ($_POST['email']);
+    $isi = ($_POST['isi']);
 
     $sql = "UPDATE tb_pegawai 
-    SET nama = '$nama', email = '$email', isi = '$isi'
-    WHERE id_bt = '$id_bt'";
+    SET email = '$email', isi = '$isi'
+    WHERE nama = '$nama'";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert(' successfully')</script>";
+        echo "<script>alert('Data Telah Diupdate')</script>";
     } else {
         echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }
-    mysqli_close($conn); 
+    mysqli_close($conn);
 }
 ?>
  
@@ -89,12 +84,12 @@ if (isset($_POST['edit'])) {
                 <tr>
                     <td>                        
                         <div class="input">
-                            <button name="save" class="btn">Save</button>
+                            <button name="save" class="btn" value="save">Save</button>
                         </div>
                     </td>
                     <td>
                         <div class="input">
-                            <button name="delete" class="btn">Delete</button>
+                            <button name="delete" class="btn" value="delete">Delete</button>
                         </div>
                     </td>
                 </tr>
@@ -106,7 +101,7 @@ if (isset($_POST['edit'])) {
                     </td>
                     <td>                        
                         <div class="input">
-                            <button name="reset" class="btn" type="reset" value="Reset">Reset</button>
+                            <button type="reset" name="reset" class="btn" value="Reset">Reset</button>
                         </div>
                     </td>
                 </tr>
