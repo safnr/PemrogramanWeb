@@ -61,8 +61,8 @@ body {
     border-color: #45717C;
 }
  
-.container .login-email .input-group .btn {
-    width: 40%;
+.container .login-email .input .btn {
+    width: 80%;
     padding: 10px 20px;
     text-align: center;
     border: none;
@@ -76,17 +76,30 @@ body {
     float: left;
     overflow: hidden;
 }
-
-.input-group {
-    float: left;
-    text-align: center;
-    padding-right: 0px;
-}
  
-.container .login-email .input-group .btn:hover {
+.container .login-email .input .btn:hover {
     transform: translateY(-5px);
     background: #dee7ec;
     color: #272730;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
 }
 
 footer {

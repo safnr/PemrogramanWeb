@@ -53,12 +53,20 @@ if (isset($_POST['submit'])) {
             <div class="input-group">
                 <input type="text" placeholder="Isi" name="isi" value="<?php echo $isi; ?>" required>
             </div>
-            <div class="input-group">
-                <button name="submit" class="btn">Submit</button>
-            </div>
-            <div class="input-group">
-                <button name="reset" class="btn" type="reset" value="Reset">Reset</button>
-            </div>
+            <table width="700" align="center" cellpadding="0">
+                <tr>
+                    <td>
+                        <div class="input">
+                            <button name="submit" class="btn">Submit</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input">
+                            <button name="reset" class="btn" type="reset" value="Reset">Reset</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </form>
     </div>
 </div>
