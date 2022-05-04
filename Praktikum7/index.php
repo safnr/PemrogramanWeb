@@ -6,26 +6,21 @@ error_reporting(0);
  
 session_start();
  
-if (isset($_SESSION['username'])) {
-    header("Location: bukuTamu.php");
-}
- 
 if (isset($_POST['submit'])) {
     $nama = ($_POST['nama']);
-    $email = $_POST['email'];
-    $isi = $_POST['isi'];
+    $email = ($_POST['email']);
+    $isi = ($_POST['isi']);
 
-    $sql = "INSERT INTO tb_pegawai (id_bt, nama, email, isi)
+    $sql = "INSERT INTO tb_pegawai
     VALUES ('', '$nama', '$email', '$isi')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('New record created successfully')</script>";
+        echo "<script>alert('Data Telah Ditambahkan')</script>";
     } else {
         echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }
-    mysqli_close($conn); 
+    mysqli_close($conn);
 }
- 
 ?>
  
 <!DOCTYPE html>
@@ -42,7 +37,7 @@ if (isset($_POST['submit'])) {
     </div>
  
     <div class="container">
-        <form action="bukuTamu.php" method="POST" class="login-email">
+        <form action="" method="POST" class="login-email">
             <p class="bukuTamu-text" style="font-size: 2rem; font-weight: 800;">Buku Tamu</p>
             <div class="input-group">
                 <input type="text" placeholder="Nama" name="nama" value="<?php echo $nama; ?>" required>
