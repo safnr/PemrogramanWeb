@@ -2,7 +2,7 @@
 include 'config.php';
 
 // Create
-$sql = "CREATE TABLE tb_db_pegawai (
+$sql = "CREATE TABLE buku_tamu (
     id_bt INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(200) NOT NULL,
     email VARCHAR(50) NOT NULL,
