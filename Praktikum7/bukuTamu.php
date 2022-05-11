@@ -12,7 +12,8 @@ $isi = $_POST['isi'];
 
 if (isset($_POST['save'])) {
 
-    $sql = "mysqli_savepoint(mysqli $mysql, string $name): bool";
+    $sql = "INSERT INTO tb_pegawai
+    VALUES ('$nama', '$email', '$isi','')";"
 
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Save Point Telah Dibuat')</script>";
