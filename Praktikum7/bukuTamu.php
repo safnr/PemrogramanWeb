@@ -1,6 +1,6 @@
 <?php 
  
-include 'config.php';
+include 'config_db_pegawai.php';
  
 error_reporting(0);
  
