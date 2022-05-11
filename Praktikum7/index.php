@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     $email = ($_POST['email']);
     $isi = ($_POST['isi']);
 
-    $sql = "INSERT INTO tb_pegawai
+    $sql = "INSERT INTO buku_tamu
     VALUES ('$nama', '$email', '$isi','')";
 
     if (mysqli_query($conn, $sql)) {
