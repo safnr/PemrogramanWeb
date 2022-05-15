@@ -107,6 +107,29 @@
                                 <input type="text" name="web" class="form-control <?php echo ($error_web !="" ? "is-invalid" : ""); ?>" id="web" placeholder="Website" value="<?php echo $web;?>">
                                 <span class="warning"><?php echo $error_web;?></span>
                             </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="telp" class="col-sm-2 col-form-label">Telp</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="telp" class="form-control <?php echo ($error_telp !="" ? "is-invalid" : ""); ?>" id="telp" placeholder="Telp" value="<?php echo $telp;?>">
+                                <span class="warning"><?php echo $error_telp;?></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="pesan" class="col-sm-2 col-form-label">Pesan</label>
+                            <div class="col-sm-10">
+                                <textarea name="pesan" class="form-control <?php echo ($error_pesan !="" ? "is-invalid" : ""); ?>" id="pesan" placeholder="Pesan"><?php echo $pesan;?></textarea>
+                                <span class="warning"><?php echo $error_pesan;?></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Sign In</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
