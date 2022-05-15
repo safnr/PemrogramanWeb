@@ -135,5 +135,19 @@
             </div>
         </div>
     </div>
+
+    <?php
+    echo "<h2>Your Input:</h2>";
+    echo "Nama = ".$nama;
+    echo "<br>";
+    echo "Email = ".$email;
+    echo "<br>";
+    echo "Website = ".$web;
+    echo "<br>";
+    echo "Telp = ".$telp;
+    echo "<br>";
+    echo "Pesan = ".$pesan;
+    ?>
+
 </body>
 </html>
