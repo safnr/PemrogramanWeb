@@ -13,14 +13,14 @@ $isi = $_POST['isi'];
 if (isset($_POST['save'])) {
 
     $sql = "INSERT INTO tb_pegawai
-    VALUES ('$nama', '$email', '$isi','')";"
+    VALUES ('$nama', '$email', '$isi','')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Save Point Telah Dibuat')</script>";
+        echo "<script>alert('Data Telah Ditambahkan')</script>";
     } else {
         echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }
-    mysqli_close($conn); 
+    mysqli_close($conn);
 }
 
 if (isset($_POST['delete'])) {
@@ -62,7 +62,7 @@ if (isset($_POST['edit'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"> 
-    <title>Buku Tamu</title>
+    <title>Form Pegawai</title>
 </head>
 <body>
     <div class="alert alert-warning" role="alert">
@@ -70,8 +70,8 @@ if (isset($_POST['edit'])) {
     </div>
  
     <div class="container">
-        <form action="bukuTamu.php" method="POST" class="login-email">
-            <p class="bukuTamu-text" style="font-size: 2rem; font-weight: 800;">Buku Tamu</p>
+        <form action="indexPegawai.php" method="POST" class="login-email">
+            <p class="bukuTamu-text" style="font-size: 2rem; font-weight: 800;">Form Pegawai</p>
             <div class="input-group">
                 <input type="text" placeholder="Nama" name="nama" value="<?php echo $nama; ?>" required>
             </div>

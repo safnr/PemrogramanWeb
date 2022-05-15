@@ -1,8 +1,8 @@
 <?php
-include 'config.php';
+include 'config_db_pegawai.php';
 
 // Create
-$sql = "CREATE TABLE buku_tamu (
+$sql = "CREATE TABLE tb_pegawai (
     id_bt INT(10) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(200) NOT NULL,
     email VARCHAR(50) NOT NULL,

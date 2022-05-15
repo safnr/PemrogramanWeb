@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Data Telah Ditambahkan')</script>";
         $_SESSION['nama'] = $row['nama'];
-        header("Location: bukuTamu.php");
+        header("Location: print_bukuTamu.php");
     } else {
         echo "<script>alert(Error: " . $sql . "<br>" . mysqli_error($conn) . ")</script>";
     }
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
     </div>
  
     <div class="container">
-        <form action="" method="POST" class="login-email">
+        <form action="print_bukuTamu.php" method="POST" class="login-email">
             <p class="bukuTamu-text" style="font-size: 2rem; font-weight: 800;">Buku Tamu</p>
             <div class="input-group">
                 <input type="text" placeholder="Nama" name="nama" value="<?php echo $nama; ?>" required>
