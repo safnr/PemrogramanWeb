@@ -89,7 +89,7 @@
             $error_nisn = "NISN tidak boleh kosong";
         } else {
             $nisn = cek_input($_POST["nisn"]);
-            if (!preg_match("/^[0-9]*$/", $nisn)) {
+            if (!is_numeric($nisn)) {
                 $nisnErr = "Inputan hanya boleh angka";
             }
         }
@@ -98,7 +98,7 @@
             $error_nik = "NIK tidak boleh kosong";
         } else {
             $nik = cek_input($_POST["nik"]);
-            if (!preg_match("/^[0-9]*$/", $nik)) {
+            if (!is_numeric($nik)) {
                 $nikErr = "Inputan hanya boleh angka";
             }
         }
@@ -140,7 +140,7 @@
             $error_rt = "RT tidak boleh kosong";
         } else {
             $rt = cek_input($_POST["rt"]);
-            if (!preg_match("/^[0-9]*$/", $rt)) {
+            if (!is_numeric($rt)) {
                 $rtErr = "Inputan hanya boleh angka";
             }
         }
@@ -149,7 +149,7 @@
             $error_rw = "RW tidak boleh kosong";
         } else {
             $rw = cek_input($_POST["rw"]);
-            if (!preg_match("/^[0-9]*$/", $rw)) {
+            if (!is_numeric($rw)) {
                 $rwErr = "Inputan hanya boleh angka";
             }
         }
@@ -185,7 +185,7 @@
             $error_kode_pos = "Kode pos tidak boleh kosong";
         } else {
             $kode_pos = cek_input($_POST["kode_pos"]);
-            if (!preg_match("/^[0-9]*$/", $kode_pos)) {
+            if (!is_numeric($kode_pos)) {
                 $kode_posErr = "Inputan hanya boleh angka";
             }
         }
@@ -206,7 +206,7 @@
             $error_no_telepon = "No hp tidak boleh kosong";
         } else {
             $no_telepon = cek_input($_POST["no_hp"]);
-            if (!preg_match("/^[0-9]*$/", $no_hp)) {
+            if (!is_numeric($no_hp)) {
                 $no_hpErr = "Inputan hanya boleh angka";
             }
         }
@@ -215,7 +215,7 @@
             $error_no_telepon = "No telepon tidak boleh kosong";
         } else {
             $no_telepon = cek_input($_POST["no_telepon"]);
-            if (!preg_match("/^[0-9]*$/", $no_telepon)) {
+            if (!is_numeric($no_telepon)) {
                 $no_teleponErr = "Inputan hanya boleh angka";
             }
         }
@@ -239,7 +239,7 @@
             $error_no_kps_pkh_kip = "No kps pkh kip tidak boleh kosong";
         } else {
             $no_kps_pkh_kip = cek_input($_POST["no_kps_pkh_kip"]);
-            if (!preg_match("/^[0-9]*$/", $no_kps_pkh_kip)) {
+            if (!is_numeric($no_kps_pkh_kip)) {
                 $no_kps_pkh_kipErr = "Inputan hanya boleh angka";
             }
         }

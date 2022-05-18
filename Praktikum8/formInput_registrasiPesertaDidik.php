@@ -60,12 +60,18 @@
             $error_nis = "NIS tidak boleh kosong";
         } else {
             $nis = cek_input($_POST["nis"]);
+            if (!is_numeric($nis)) {
+                $nisErr = "Inputan hanya boleh angka";
+            }
         }
 
         if (empty($_POST["nomor_peserta_ujian"])) {
             $error_nomor_peserta_ujian = "Nomor peserta ujian tidak boleh kosong";
         } else {
             $nomor_peserta_ujian = cek_input($_POST["nomor_peserta_ujian"]);
+            if (!is_numeric($nomor_peserta_ujian)) {
+                $error_nomor_peserta_ujian = "Inputan hanya boleh angka";
+            }
         }
 
         if (empty($_POST["apakah_pernah_paud"])) {
@@ -84,12 +90,18 @@
             $error_no_seri_skhun_sebelumnya = "No seri skhun sebelumnya tidak boleh kosong";
         } else {
             $no_seri_skhun_sebelumnya = cek_input($_POST["no_seri_skhun_sebelumnya"]);
+            if (!is_numeric($no_seri_skhun_sebelumnya)) {
+                $error_no_seri_skhun_sebelumnya = "Inputan hanya boleh angka";
+            }
         }
 
         if (empty($_POST["no_seri_ijazah_sebelumnya"])) {
             $error_no_seri_ijazah_sebelumnya = "No seri ijazah sebelumnya tidak boleh kosong";
         } else {
             $no_seri_ijazah_sebelumnya = cek_input($_POST["no_seri_ijazah_sebelumnya"]);
+            if (!is_numeric($nomor_seri_ijazah_sebelumnya)) {
+                $error_nomor_seri_ijazah = "Inputan hanya boleh angka";
+            }
         }
 
         if (empty($_POST["hobi"])) {
