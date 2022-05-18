@@ -99,7 +99,7 @@
             $error_no_seri_ijazah_sebelumnya = "No seri ijazah sebelumnya tidak boleh kosong";
         } else {
             $no_seri_ijazah_sebelumnya = cek_input($_POST["no_seri_ijazah_sebelumnya"]);
-            if (!is_numeric($nomor_seri_ijazah_sebelumnya)) {
+            if (!is_numeric($no_seri_ijazah_sebelumnya)) {
                 $error_nomor_seri_ijazah = "Inputan hanya boleh angka";
             }
         }
@@ -243,12 +243,12 @@
                                 <select class="form-control" name="cita_cita">
                                     <option>Pilih</option>
                                     <option value="PNS">PNS</option>
-                                    <option value="TNI/POLRI">TNI/POLRI</option>
-                                    <option value="Guru/Dosen">Guru/Dosen</option>
+                                    <option value="TNI POLRI">TNI/POLRI</option>
+                                    <option value="Guru Dosen">Guru/Dosen</option>
                                     <option value="Dokter">Dokter</option>
                                     <option value="Politikus">Politikus</option>
                                     <option value="Wiraswasta">Wiraswasta</option>
-                                    <option value="Seni/Lukis/Artis/Sejenisnya">Seni/Lukis/Artis/Sejenisnya</option>
+                                    <option value="Seni Lukis Artis Sejenisnya">Seni/Lukis/Artis/Sejenisnya</option>
                                     <option value="Lainnya">Lainnya</option>
                                 </select>
                                 <span class="warning"><?php echo $error_cita_cita;?></span>
