@@ -87,7 +87,7 @@
                         <div class="form-group row">
                             <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                             <div class="col-sm-10">
-                                <input type="text" name="nama" class="form-control <?php echo ($error_email !="" ? "is-invalid" : ""); ?>" id="nama" placeholder="Nama" value="<?php echo $nama;?>">
+                                <input type="text" name="nama" class="form-control <?php echo ($error_nama !="" ? "is-invalid" : ""); ?>" id="nama" placeholder="Nama" value="<?php echo $nama;?>">
                                 <span class="warning"><?php echo $error_nama;?></span>
                             </div>
                         </div>

@@ -4,11 +4,15 @@
     <title>Form Validation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        html {
+            margin: 20px 60px;
+        }
         .warning {
             color: #FF0000;
         }
     </style>
 </head>
+<h2>Formulir Peserta Didik</h2>
 <body>
     <?php
     $error_nama = "";
@@ -79,15 +83,13 @@
     <div class="row">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-reader">
-                    Contoh Validasi Form dengan PHP
-                </div>
+                <div class="card-reader"></div>
                 <div class="card-body">
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <div class="form-group row">
                             <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                             <div class="col-sm-10">
-                                <input type="text" name="nama" class="form-control <?php echo ($error_email !="" ? "is-invalid" : ""); ?>" id="nama" placeholder="Nama" value="<?php echo $nama;?>">
+                                <input type="text" name="nama" class="form-control <?php echo ($error_nama !="" ? "is-invalid" : ""); ?>" id="nama" placeholder="Nama" value="<?php echo $nama;?>">
                                 <span class="warning"><?php echo $error_nama;?></span>
                             </div>
                         </div>
@@ -126,7 +128,7 @@
 
                         <div class="form-group row">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Sign In</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
                     </form>
