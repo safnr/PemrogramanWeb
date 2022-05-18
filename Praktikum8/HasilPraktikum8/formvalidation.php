@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <title>Form Validation</title>
-    <link rel="stylesheet" href="https://stackpathbootstraph.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwE0ngsV7Zt2NXFoaoApmYm81iuXoPkF0JwJ8ERdknLPM0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         .warning {
             color: #FF0000;
