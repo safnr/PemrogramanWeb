@@ -17,7 +17,7 @@
         <h1 class="text-center">Formulir Peserta Didik</h1>    
     <?php
     //Include file koneksi, untuk koneksikan ke database
-    //include "config.php";
+    include "config.php";
 
     $error_jenis_pendaftaran = "";
     $error_tanggal_masuk_sekolah = "";
@@ -121,8 +121,6 @@
         }
     }
 
-
-
     //Fungsi untuk mencegah inputan karakter yang tidak sesuai
     function cek_input($data) {
         $data = trim($data);
@@ -130,8 +128,7 @@
         $data = htmlspecialchars($data);
         return $data;
     }
-    ?>   
-    
+    ?>       
     
     <div class="row">
         <div class="col-md-12">
