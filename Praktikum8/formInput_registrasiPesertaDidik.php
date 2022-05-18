@@ -106,17 +106,18 @@
 
         //Query input menginput data kedalam tabel pendaftaraan
         $sql="INSERT INTO tb_registrasiPesertaDidik VALUES
-		('$id_pd','$jenis_pendaftaran','$tanggal_masuk_sekolah','$nis','$nomor_peserta_ujian','$apakah_pernah_paud',$apakah_pernah_tk,'$no_seri_skhun_sebelumnya','$no_seri_ijazah_sebelumnya','$hobi','$cita_cita')";
+		('','$jenis_pendaftaran','$tanggal_masuk_sekolah','$nis','$nomor_peserta_ujian','$apakah_pernah_paud',$apakah_pernah_tk,'$no_seri_skhun_sebelumnya','$no_seri_ijazah_sebelumnya','$hobi','$cita_cita')";
 
         //Menjalankan query diatas
         $hasil=mysqli_query($conn,$sql);
 
         //Kondisi apakah berhasil atau tidak dalam mengeksekusi query diatas
         if ($hasil) { 
-            echo "<div class='alert alert-success'> Selamat $nama anda telah berhasil mendaftar.</div>"; 
+            echo "<div class='alert alert-success'> Data telah berhasil Dimasukkan.</div>"; 
+            header("Location: formInput_dataPribadi.php");
         }
         else {
-            echo "<div class='alert alert-danger'> Pendaftaraan Gagal.</div>";
+            echo "<div class='alert alert-danger'> Gagal Memasukkan Data.</div>";
         }
     }
 
@@ -139,7 +140,7 @@
                 <div class="card-body">
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <div class="alert alert-primary">
-                            <strong>Data Diri</strong>
+                            <strong>Registrasi Peserta Didik</strong>
                         </div>
                         <div class="form-group row">
                             <label for="jenis_pendaftaran" class="col-sm-3 col-form-label">Jenis Pendaftaran</label>
@@ -149,6 +150,7 @@
                                     <option value="Siswa Baru">Siswa Baru</option>
                                     <option value="Pindahan">Pindahan</option>
                                 </select>
+                                <span class="warning"><?php echo $error_jenis_pendaftaran;?></span>
                             </div>                                                        
                         </div>
 
@@ -179,8 +181,9 @@
                         <div class="form-group row">
                             <label for="apakah_pernah_paud" class="col-sm-3 col-form-label">Apakah pernah PAUD?</label>
                             <div class="col-sm-10">
-                                <input type="text" name="apakah_pernah_paud" class="form-control <?php echo ($error_apakah_pernah_paud !="" ? "is-invalid" : ""); ?>" id="apakah_pernah_paud" placeholder="Apakah pernah PAUD?" value="<?php echo $apakah_pernah_paud;?>">
-                                <span class="warning"><?php echo $error_apakah_pernah_paud;?></span>
+                                <input type="radio" name="apakah_pernah_paud" value="Ya" <?php echo ($apakah_pernah_paud=='Ya' ? 'checked' : '');?>>Ya
+                                <input type="radio" name="apakah_pernah_paud" value="Tidak" <?php echo ($apakah_pernah_paud=='Tidak' ? 'checked' : '');?>>Tidak
+                            <span class="warning"><?php echo $error_apakah_pernah_paud;?></span>
                             </div>
                         </div>
 
