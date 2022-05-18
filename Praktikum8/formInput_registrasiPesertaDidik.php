@@ -257,7 +257,7 @@
                 
                         <div class="form-group row">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Next</button>
+                                <button type="submit" name="Submit" id="Submit" class="btn btn-primary">Next</button>
                                 <button type="reset" class="btn btn-secondary">Reset</button>
                             </div>
                         </div>
