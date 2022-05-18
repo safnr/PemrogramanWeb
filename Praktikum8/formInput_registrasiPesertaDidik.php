@@ -187,7 +187,8 @@
                         <div class="form-group row">
                             <label for="apakah_pernah_tk" class="col-sm-3 col-form-label">Apakah pernah TK?</label>
                             <div class="col-sm-10">
-                                <input type="text" name="apakah_pernah_tk" class="form-control <?php echo ($error_apakah_pernah_tk !="" ? "is-invalid" : ""); ?>" id="apakah_pernah_tk" placeholder="Apakah pernah TK?" value="<?php echo $apakah_pernah_tk;?>">
+                                <input type="radio" name="apakah_pernah_tk" value="Ya" <?php echo ($apakah_pernah_tk=='Ya' ? 'checked' : '');?>>Ya
+                                <input type="radio" name="apakah_pernah_tk" value="Tidak" <?php echo ($apakah_pernah_tk=='Tidak' ? 'checked' : '');?>>Tidak
                                 <span class="warning"><?php echo $error_apakah_pernah_tk;?></span>
                             </div>
                         </div>
@@ -210,11 +211,37 @@
 
                         <div class="form-group row">
                             <label for="hobi" class="col-sm-3 col-form-label">Hobi</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="hobi" class="form-control <?php echo ($error_hobi !="" ? "is-invalid" : ""); ?>" id="hobi" placeholder="Hobi" value="<?php echo $hobi;?>">
+                            <div class="col-sm-10">                                                     
+                                <select class="form-control" name="hobi">
+                                    <option>Pilih</option>
+                                    <option value="Olahraga">Olahraga</option>
+                                    <option value="Kesenian">Kesenian</option>
+                                    <option value="Membaca">Membaca</option>
+                                    <option value="Menulis">Menulis</option>
+                                    <option value="Traveling">Traveling</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
                                 <span class="warning"><?php echo $error_hobi;?></span>
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="cita_cita" class="col-sm-3 col-form-label">Cita-cita</label>
+                            <div class="col-sm-10">                                                     
+                                <select class="form-control" name="cita_cita">
+                                    <option>Pilih</option>
+                                    <option value="PNS">PNS</option>
+                                    <option value="TNI/POLRI">TNI/POLRI</option>
+                                    <option value="Guru/Dosen">Guru/Dosen</option>
+                                    <option value="Dokter">Dokter</option>
+                                    <option value="Politikus">Politikus</option>
+                                    <option value="Wiraswasta">Wiraswasta</option>
+                                    <option value="Seni/Lukis/Artis/Sejenisnya">Seni/Lukis/Artis/Sejenisnya</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
+                                <span class="warning"><?php echo $error_cita_cita;?></span>
+                            </div>
+                        </div>                        
                 
                         <div class="form-group row">
                             <div class="col-sm-10">
