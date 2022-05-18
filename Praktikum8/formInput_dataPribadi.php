@@ -30,94 +30,65 @@
     $error_hobi = "";
     $error_cita_cita = "";
 
-    $jenis_pendaftaran = "";
-    $tanggal_masuk_sekolah = "";
-    $nis = "";
-    $nomor_peserta_ujian = "";
-    $apakah_pernah_paud = "";
-    $apakah_pernah_tk = "";
-    $no_seri_skhun_sebelumnya = "";
-    $no_seri_ijazah_sebelumnya = "";
-    $hobi = "";
-    $cita_cita = "";
+    $nama_lengkap
+    $jenis_kelamin
+    $nisn
+    $nik
+    $tempat_lahir
+    $tanggal_lahir
+    $agama
+    $berkebutuhan_khusus
+    $alamat_jalan
+    $rt
+    $rw
+    $nama_dusun
+    $nama_kelurahan_desa
+    $kecamatan
+    $kode_pos
+    $tempat_tinggal
+    $moda_transportasi
+    $nomor_hp
+    $nomor_telepon
+    $email_pribadi
+    $penerima_kps_pkh_kip
+    $no_kps_pkh_kip
+    $kewarganegaraan
 
     //Mengecek kiriman form dari method post
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if (empty($_POST["jenis_pendaftaran"])) {
-            $error_jenis_pendaftaran = "Jenis pendaftaran tidak boleh kosong";
+        if (empty($_POST["nama_lengkap"])) {
+            $error_nama = "Nama tidak boleh kosong";
         } else {
-            $jenis_pendaftaran = cek_input($_POST["jenis_pendaftaran"]);
+            $nama_lengkap = cek_input($_POST["nama_lengkap"]);
+            if (!preg_match("/^[a-zA-Z ]*$/", $nama_lengkap)) {
+                $nameErr = "Inputan hanya boleh huruf dan spasi";
+            }
         }
 
-        if (empty($_POST["tanggal_masuk_sekolah"])) {
-            $error_tanggal_masuk_sekolah = "Tanggal masuk sekolah tidak boleh kosong";
+        if (empty($_POST["jenis_kelamin"])) {
+            $error_jenis_kelamin = "Jenis kelamin tidak boleh kosong";
         } else {
-            $tanggal_masuk_sekolah = cek_input($_POST["tanggal_masuk_sekolah"]);
-        }
-
-        if (empty($_POST["nis"])) {
-            $error_nis = "NIS tidak boleh kosong";
-        } else {
-            $nis = cek_input($_POST["nis"]);
-        }
-
-        if (empty($_POST["nomor_peserta_ujian"])) {
-            $error_nomor_peserta_ujian = "Nomor peserta ujian tidak boleh kosong";
-        } else {
-            $nomor_peserta_ujian = cek_input($_POST["nomor_peserta_ujian"]);
-        }
-
-        if (empty($_POST["apakah_pernah_paud"])) {
-            $error_apakah_pernah_paud = "Apakah pernah paud tidak boleh kosong";
-        } else {
-            $apakah_pernah_paud = cek_input($_POST["apakah_pernah_paud"]);
-        }
-
-        if (empty($_POST["apakah_pernah_tk"])) {
-            $error_apakah_pernah_tk = "Apakah pernah tk tidak boleh kosong";
-        } else {
-            $apakah_pernah_tk = cek_input($_POST["apakah_pernah_tk"]);
-        }
-
-        if (empty($_POST["no_seri_skhun_sebelumnya"])) {
-            $error_no_seri_skhun_sebelumnya = "No seri skhun sebelumnya tidak boleh kosong";
-        } else {
-            $no_seri_skhun_sebelumnya = cek_input($_POST["no_seri_skhun_sebelumnya"]);
-        }
-
-        if (empty($_POST["no_seri_ijazah_sebelumnya"])) {
-            $error_no_seri_ijazah_sebelumnya = "No seri ijazah sebelumnya tidak boleh kosong";
-        } else {
-            $no_seri_ijazah_sebelumnya = cek_input($_POST["no_seri_ijazah_sebelumnya"]);
-        }
-
-        if (empty($_POST["hobi"])) {
-            $error_hobi = "Hobi tidak boleh kosong";
-        } else {
-            $hobi = cek_input($_POST["hobi"]);
-        }
-
-        if (empty($_POST["cita_cita"])) {
-            $error_cita_cita = "Cita cita tidak boleh kosong";
-        } else {
-            $cita_cita = cek_input($_POST["cita_cita"]);
-        }
+            $nama = cek_input($_POST["jenis_pendaftaran"]);
+        }       
 
         //Query input menginput data kedalam tabel pendaftaraan
-        $sql="INSERT INTO tb_registrasiPesertaDidik VALUES
-		('','$jenis_pendaftaran','$tanggal_masuk_sekolah','$nis','$nomor_peserta_ujian','$apakah_pernah_paud',$apakah_pernah_tk,'$no_seri_skhun_sebelumnya','$no_seri_ijazah_sebelumnya','$hobi','$cita_cita')";
+        $sql="INSERT INTO tb_dataPribadi VALUES
+		('','$nama_lengkap','$$jenis_kelamin','$nisn','$nik',$tempat_lahir','$tanggal_lahir','$agama',
+        '$berkebutuhan_khusus','$alamat_jalan','$rt','$rw','$nama_dusun','$nama_kelurahan_desa','$kecamatan',
+        '$kode_pos','$tempat_tinggal','$moda_transportasi','$nomor_hp','$nomor_telepon','$email_pribadi','$penerima_kps_pkh_kip',
+        '$no_kps_pkh_kip','$kewarganegaraan')";
 
         //Menjalankan query diatas
         $hasil=mysqli_query($conn,$sql);
 
         //Kondisi apakah berhasil atau tidak dalam mengeksekusi query diatas
         if ($hasil) { 
-            echo "<div class='alert alert-success'> Data telah berhasil Dimasukkan.</div>"; 
-            header("Location: formInput_dataPribadi.php");
+            echo "<div class='alert alert-success'> Selamat $nama_lengkap telah berhasil terdaftar!.</div>"; 
+            header("Location: hasilInput.php");
         }
         else {
-            echo "<div class='alert alert-danger'> Gagal Memasukkan Data.</div>";
+            echo "<div class='alert alert-danger'> Pendaftaran Gagal.</div>";
         }
     }
 
@@ -137,7 +108,7 @@
                 <div class="card-body">
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                         <div class="alert alert-primary">
-                            <strong>Registrasi Peserta Didik</strong>
+                            <strong>Data Pribadi</strong>
                         </div>
                         <div class="form-group row">
                             <label for="jenis_pendaftaran" class="col-sm-3 col-form-label">Jenis Pendaftaran</label>
@@ -218,7 +189,7 @@
                 
                         <div class="form-group row">
                             <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Next</button>
+                                <button type="submit" class="btn btn-primary">Kirim</button>
                                 <button type="reset" class="btn btn-secondary">Reset</button>
                             </div>
                         </div>
