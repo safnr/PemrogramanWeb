@@ -25,7 +25,17 @@
       <meta charset="utf-8">  
       <meta name="viewport" content="width=device-width, initial-scale=1">  
       <link rel="stylesheet" type="text/css" href="css/style.css">  
-      <title>Halaman Awal Login</title>  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></link>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <style>
+          html {
+               margin: 20px 60px;
+          }
+          .warning {
+               color: #FF0000;
+          }     
+      </style>
+      <title>Form Login</title>  
  </head>  
  <body>  
  <div class="main">  
