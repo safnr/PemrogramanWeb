@@ -51,7 +51,7 @@
                          <tr>
                               <td>                        
                                    <div class="input">
-                                        <button name="save" class="btn" value="save">Save</button>
+                                        <button name="submit" class="btn" value="submit">Login</button>
                                    </div>
                               </td>
                               <td>                        
