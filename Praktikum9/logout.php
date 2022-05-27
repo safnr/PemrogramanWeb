@@ -20,7 +20,7 @@
           <div class="card-body">
                <h2 class="text-center">Logout</h2>
                <p>Anda telah berhasil logout!</p>
-               <p>Klik <a href="login.php">disini</a> untuk login kembali.</p>
+               <p>Klik <a href="index.php">disini</a> untuk login kembali.</p>
           </div>
      </div>
 </body>

@@ -1,22 +1,24 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "localhost"; //Nama host
+$username = "root"; //Username
+$password = ""; //
 
-// Create connection
+//Membuat koneksi
 $conn = mysqli_connect($servername, $username, $password);
-// Check connection
+//Mengecek koneksi
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Create database
+//Membuat database FINA
 $sql = "CREATE DATABASE FINA";
+//Mengecek apakah database berhasil dibuat
 if (mysqli_query($conn, $sql)) {
     echo "Database created successfully";
 } else {
     echo "Error creating database: " . mysqli_error($conn);
 }
 
+//Menutup koneksi
 mysqli_close($conn);
 ?>

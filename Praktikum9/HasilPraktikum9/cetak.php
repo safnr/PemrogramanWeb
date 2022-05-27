@@ -1,8 +1,12 @@
 <?php
+//Memanggil file koneksi.inc.php
 include "koneksi.inc.php";
 
+//Menyeleksi data dari tabel kontak
 $sql = "SELECT * from kontak order by id;";
 $qry = mysqli_query($conn, $sql) or die("Proses cetak gagal");
+
+//Menampilkan data dari tabel kontak
 echo "<table width='75%' cellpadding='2' cellspacing='0' border='1'>
 <tr>
 <th>No</th>
@@ -29,4 +33,7 @@ $nomor++;
 }
 echo "</table>";
 ?>
+<!--Memanggil file bootstrap-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!--Memanggil file kontak.html-->
 <a href="kontak.html">Kembali</a>

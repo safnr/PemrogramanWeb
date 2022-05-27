@@ -7,9 +7,9 @@ $sql = "CREATE TABLE login (
     username VARCHAR(30) NOT NULL,
     password VARCHAR(10)
     )";
-//Mengeksekusi perintah SQL
+//Mengecek apakah tabel tersebut berhasil atau gagal dibuat
 if (mysqli_query($conn, $sql)) {
-    echo "Table kontak created successfully";
+    echo "Table login created successfully";
 } else {
     echo "Error creating database: " . mysqli_error($conn);
 }

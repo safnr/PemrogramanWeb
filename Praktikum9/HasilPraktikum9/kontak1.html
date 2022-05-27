@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <form method="POST" action="simpan_kontak.php" style="padding: 60px;">
+    <form method="POST" action="simpan_kontak.php">
         <table width="300" align="center" cellpadding="2" cellspacing="2">
             <tr>
                 <td colspan="2" align="center">
@@ -21,7 +21,11 @@
             </tr>
             <tr>
                 <td width="130">Jenis Kelamin</td>
-                <td><input type="text" name="jenis_kelamin"></td>
+                <td>
+                    <input type="radio" name="jenis_kelamin" value="Laki-laki" <?php echo ($jenis_kelamin=='Laki-laki' ? 'checked' : '');?>>Laki-laki
+                                <input type="radio" name="jenis_kelamin" value="Perempuan" <?php echo ($jenis_kelamin=='Perempuan' ? 'checked' : '');?>>Perempuan
+                                
+                    <input type="text" name="jenis_kelamin"></td>
             </tr>
             <tr>
                 <td width="130">Email</td>
