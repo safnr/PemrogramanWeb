@@ -5,19 +5,7 @@
  if (isset($_POST['submit'])) { //Jika tombol submit ditekan  
       $email=mysqli_real_escape_string($conn,$_POST['email']);  
       $password=mysqli_real_escape_string($conn,$_POST['password']);  
-      $sql=mysqli_query($conn,"select * from login where username='$email' && password='$password'");  
-      $num=mysqli_num_rows($sql);  
-      //Jika username dan password ada yang sesuai
-      if ($num>0) {
-           //jika login berhasil  
-           $row=mysqli_fetch_assoc($sql);  
-           $_SESSION['USER_EMAIL']=$row['email']; 
-           $_SESSION['USER_PASSWORD']=$row['password'];   
-           header("location:HalamanBeranda.php");
-     //jika login gagal (username/pw tidak sesuai)
-      }else{  
-           $msg="Mohon, Masukkan Data yang Valid!";  
-      }  
+      header("location:HalamanBeranda.php");
  }  
  ?>  
  <!DOCTYPE html>  
@@ -66,9 +54,7 @@
                          <?php echo $msg ?>
                     </div>
                 </form>
-
-                </div>
-                
+                </div>                
            </div>
       </div>
  </div>
