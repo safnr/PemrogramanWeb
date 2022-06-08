@@ -2,10 +2,29 @@
  session_start();  
  $conn=mysqli_connect("localhost","root","","myweb");  
  if (!isset($_SESSION['USER_ID'])) {  
-      header("location:guestbook.php");  
+      header("location:guestbook_.php");  
       die();  
  }  
 
+//Menyeleksi data dari tabel guestbook
+$sql = "SELECT * from guestbook order by id;";
+$qry = mysqli_query($conn, $sql) or die("Proses cetak gagal");
+
+
+//Menampilkan data dari tabel guestbook
+echo "<center><table width='75%' cellpadding='2' cellspacing='0' border='1' style='
+background-color:white; color:black;'>
+<tr>
+<th>No</th>
+<th>Posted</th>
+<th>Name</th>
+<th>Email</th>
+<th>Address</th>
+<th>City</th>
+<th>Pesan</th>
+<tr></th>";
+
+//Tombol
  if (isset($_POST['delete'])) {
      $posted = ($_POST['posted']);
      $name = ($_POST['name']);
@@ -55,10 +74,12 @@
       
       <title>Dashboard</title>  
       <style>  
-           body{  
-                justify-content: space-around;  
-                font-family: 'Poppins', sans-serif;  
-           }  
+          body{  
+               justify-content: space-around;  
+               font-family: 'Poppins', sans-serif;  
+          }  
+          table {
+          }
       </style>  
  </head>  
  <body>  
@@ -66,17 +87,17 @@
       <tr>
           <td>
                <div class="input">
-                    <button name="edit" class="btn">Edit</button>
+                    <button name="edit" class="btn btn-primary">Edit</button>
                     </div>
           </td>
           <td>
                <div class="input">
-                    <button name="delete" class="btn">Delete</button>
+                    <button name="delete" class="btn btn-danger">Delete</button>
                </div>
           </td>
           <td>                        
                <div class="input">
-                    <button type="reset" name="reset" class="btn" value="Reset">Reset</button>
+                    <button type="reset" name="reset" class="btn btn-secondary" value="Reset">Reset</button>
                </div>
           </td>
      </tr>

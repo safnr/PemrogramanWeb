@@ -1,7 +1,7 @@
 <?php
 include 'koneksi.php'; //Memanggil file koneksi.php
 
-//Membuat tabel user
+//Membuat tabel guestbook
 $sql = "CREATE TABLE guestbook (
     id INT(5) AUTO_INCREMENT NOT NULL PRIMARY KEY,
     posted date,
