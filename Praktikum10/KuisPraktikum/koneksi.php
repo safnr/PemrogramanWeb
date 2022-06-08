@@ -4,9 +4,9 @@ $username = "root";
 $password = "";
 $dbname = "myweb";
 
-// Create connection
+//Membuat Koneksi
 $conn = mysqli_connect($host, $username, $password, $dbname);
-// Check connection
+//Mengecek Koneksi
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 } 

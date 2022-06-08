@@ -1,7 +1,7 @@
 <?php   
  session_start();  
  $conn=mysqli_connect("localhost","root","","myweb");  
- if (!isset($_SESSION['USER_EMAIL'])) {  
+ if (!isset($_SESSION['USER_ID'])) {  
       header("location:login.php");  
       die();  
  }  
@@ -25,7 +25,7 @@
  <body>  
      <div class="card">
           <div class="card-body">
-               <h2 class="text-center">Selamat Datang, <?php echo $_SESSION['USER_NAME']; ?> pada hari <?php echo date("d F Y"); ?>!)</h3>
+               <h2 class="text-center">Selamat Datang, <?php echo $_SESSION['USER_NAME']; ?> pada hari <?php echo date("d F Y"); ?></h3>
           
           </div>
      </div>  
