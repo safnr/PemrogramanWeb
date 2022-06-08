@@ -27,3 +27,10 @@ if (isset($_POST['submit'])) { //Jika tombol submit ditekan
 //Memanggil file signUp.html sebelum dapat mengakses file signUp.php
 header("location:signUp.html");
 ?>
+
+<html>
+    <div class="error">
+        <!--Menampilkan pesan saat terjadi error-->
+        <?php echo $msg ?>
+    </div>
+</html>
