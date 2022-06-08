@@ -44,6 +44,19 @@
     //Mengecek kiriman form dari method post
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+        // $jenis_pendaftaran = cek_input($_POST["jenis_pendaftaran"]);
+        // $tanggal_masuk_sekolah = cek_input($_POST["tanggal_masuk_sekolah"]);
+        // $nis = cek_input($_POST["nis"]);
+        // $nomor_peserta_ujian = cek_input($_POST["nomor_peserta_ujian"]);
+        // $apakah_pernah_paud = cek_input($_POST["apakah_pernah_paud"]);
+        // $apakah_pernah_tk = cek_input($_POST["apakah_pernah_tk"]);
+        // $no_seri_skhun_sebelumnya = cek_input($_POST["no_seri_skhun_sebelumnya"]);
+        // $no_seri_ijazah_sebelumnya = cek_input($_POST["no_seri_ijazah_sebelumnya"]);
+        // $hobi = cek_input($_POST["hobi"]);
+        // $cita_cita = cek_input($_POST["cita_cita"]);
+
+        //Code Asli
+
         if (empty($_POST["jenis_pendaftaran"])) {
             $error_jenis_pendaftaran = "Jenis pendaftaran tidak boleh kosong";
         } else {
@@ -209,7 +222,7 @@
                         <div class="form-group row">
                             <label for="no_seri_skhun_sebelumnya" class="col-sm-3 col-form-label">No.Seri SKHUN Sebelumnya</label>
                             <div class="col-sm-10">
-                                <input type="text" name="no_seri_skhun_sebelumnya" class="form-control <?php echo ($error_no_seri_skhun_sebelumnya !="" ? "is-invalid" : ""); ?>" id="no_seri_skhun_sebelumnya" placeholder="No.Seri SKHUN Sebelumnya" value="<?php echo $no_seri_skhun_sebelumnya;?>">
+                                <input type="text" name="no_seri_skhun_sebelumnya" class="form-control <?php echo ($error_no_seri_skhun_sebelumnya !="" ? "is-invalid" : ""); ?>" id="no_seri_skhun_sebelumnya" placeholder="Masukkan No.Seri SKHUN Sebelumnya" value="<?php echo $no_seri_skhun_sebelumnya;?>">
                                 <span class="warning"><?php echo $error_no_seri_skhun_sebelumnya;?></span>
                             </div>
                         </div>
@@ -217,7 +230,7 @@
                         <div class="form-group row">
                             <label for="no_seri_ijazah_sebelumnya" class="col-sm-3 col-form-label">No.Seri Ijazah Sebelumnya</label>
                             <div class="col-sm-10">
-                                <input type="text" name="no_seri_ijazah_sebelumnya" class="form-control <?php echo ($error_no_seri_ijazah_sebelumnya !="" ? "is-invalid" : ""); ?>" id="no_seri_ijazah_sebelumnya" placeholder="No.Seri Ijazah Sebelumnya" value="<?php echo $no_seri_ijazah_sebelumnya;?>">
+                                <input type="text" name="no_seri_ijazah_sebelumnya" class="form-control <?php echo ($error_no_seri_ijazah_sebelumnya !="" ? "is-invalid" : ""); ?>" id="no_seri_ijazah_sebelumnya" placeholder="Masukkan No.Seri Ijazah Sebelumnya" value="<?php echo $no_seri_ijazah_sebelumnya;?>">
                                 <span class="warning"><?php echo $error_no_seri_ijazah_sebelumnya;?></span>
                             </div>
                         </div>
