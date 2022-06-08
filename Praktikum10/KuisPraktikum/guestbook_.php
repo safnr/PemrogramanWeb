@@ -3,7 +3,7 @@ session_start(); //Memulai Session
 //Include file koneksi, untuk koneksikan ke database
 include "koneksi.php";
 
-$posted = $_POST['posted'];
+$posted = date('Y-m-d', strtotime($_POST['posted']));
 $name = $_POST['name'];
 $email = $_POST['email'];
 $address = $_POST['address'];
@@ -23,8 +23,11 @@ if (isset($_POST['submit'])) { //Jika tombol submit ditekan
 }  
 
 //Memanggil file guestbook.php sebelum dapat mengakses file guestbook_.php
-header("location:guestbook.php");
+header("location:guestbook.html");
 ?>
-
-
-?>
+<html>
+<div class="error">
+        <!--Menampilkan pesan saat terjadi error-->
+        <?php echo $msg ?>
+    </div>
+</html>

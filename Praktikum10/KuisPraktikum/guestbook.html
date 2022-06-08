@@ -16,7 +16,7 @@
                     <table width="300" align="center" cellpadding="2" cellspacing="2">
                          <tr>
                               <td>
-                                   Posted<input type="date" name="posted" class="form-control id="posted" value="<?php echo $posted?>">
+                                   Posted<input type="date" name="posted" class="form-control" required>
                             
                               </td>
                          </tr>
@@ -60,14 +60,6 @@
                               </td>
                          </tr>
                     </table>
-                    <div class="error">
-                         <!--Menampilkan pesan saat terjadi error-->
-                         <?php 
-                         include "koneksi.php";
-                         $msg=""; //Variabel untuk pesan kesalahan
-                         echo $msg 
-                         ?>
-                    </div>
                 </form>
                 </div>                
            </div>
