@@ -1,17 +1,19 @@
 <?php   
-session_start();  
-$conn = mysqli_connect("localhost","root","","myweb");  
-//  if (!isset($_SESSION['USER_ID'])) {  
-//       header("location:guestbook_.php");  
-//       die();  
-//  }  
+session_start(); //Memulai Session
+//Include file koneksi, untuk koneksikan ke database
+include "koneksi.php";
+
+ 
+ if (!isset($_SESSION['id'])) {  
+    //   header("location:guestbook_.php");  
+    //   die(); 
 
 //Menyeleksi data dari tabel guestbook
 $sql = "SELECT * from guestbook order by id;";
 $qry = mysqli_query($conn, $sql) or die("Proses cetak gagal");
-$nomor = 1;
-while($hasil = mysqli_fetch_row($qry)){
-    $nomor++;
+
+if ($hasil = mysqli_fetch_row($qry)) {
+
 ?> 
 <!DOCTYPE html>  
 <html>  
@@ -27,12 +29,16 @@ while($hasil = mysqli_fetch_row($qry)){
         table {
             background-color:white; 
             color:black;
+            width:85%;
+        }
+        table th th , table tr td{
+	        padding: 10px 20px	;
         }
       </style>  
 </head>  
 <body>  
     <!-- Menampilkan data dari tabel guestbook -->
-    <table width="750" align="center" cellpadding="2" cellspacing="0" border="1">
+    <table align="center" cellpadding="2" cellspacing="0" border="1">
     <tr>
         <th>No</th>
         <th>Posted</th>
@@ -42,8 +48,7 @@ while($hasil = mysqli_fetch_row($qry)){
         <th>City</th>
         <th>Pesan</th>
         <th>Option</th>
-    </tr>
-    
+    </tr>    
     <tr>
         <td><?php echo $hasil[0]; ?></td>
 		<td><?php echo $hasil[1]; ?></td>
@@ -57,6 +62,6 @@ while($hasil = mysqli_fetch_row($qry)){
 		</td>
 	</tr>        
     </table>  
-    <?php } ?>
+    <?php } } ?>
  </body>  
  </html>
