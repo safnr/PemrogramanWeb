@@ -1,10 +1,10 @@
 <?php   
  session_start();  
  $conn=mysqli_connect("localhost","root","","myweb");  
- if (!isset($_SESSION['USER_ID'])) {  
-      header("location:guestbook_.php");  
-      die();  
- }  
+//  if (!isset($_SESSION['USER_ID'])) {  
+//       header("location:guestbook_.php");  
+//       die();  
+//  }  
 
 //Menyeleksi data dari tabel guestbook
 $sql = "SELECT * from guestbook order by id;";
@@ -22,7 +22,24 @@ background-color:white; color:black;'>
 <th>Address</th>
 <th>City</th>
 <th>Pesan</th>
+<th>Option</th>
+<tr>
 <tr></th>";
+
+$nomor=1;
+while($hasil=mysqli_fetch_row($qry)){
+echo "<tr>
+<td>$hasil[0]</td>
+<td>$hasil[1]</td>
+<td>$hasil[2]</td>
+<td>$hasil[3]</td>
+<td>$hasil[4]</td>
+<td>$hasil[5]</td>
+<td>$hasil[6]</td>
+</tr>";
+$nomor++;
+}
+echo "</table>";
 
 //Tombol
  if (isset($_POST['delete'])) {
