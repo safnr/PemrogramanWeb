@@ -118,6 +118,13 @@ echo "</table>";
                </div>
           </td>
      </tr>
+     <tr>
+          <td>
+          <div class="input">
+                    <button type="reset" name="reset" class="btn btn-secondary" value="Reset">Reset</button>
+               </div>
+          </td>
+     </tr>
  </table>
  </body>  
  </html>

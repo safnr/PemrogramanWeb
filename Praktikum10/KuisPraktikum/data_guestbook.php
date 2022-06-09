@@ -10,16 +10,16 @@ $conn = mysqli_connect("localhost","root","","myweb");
 $sql = "SELECT * from guestbook order by id;";
 $qry = mysqli_query($conn, $sql) or die("Proses cetak gagal");
 $nomor = 1;
-while($hasil=mysqli_fetch_row($qry)){
+while($hasil = mysqli_fetch_row($qry)){
     $nomor++;
 ?> 
- <!DOCTYPE html>  
- <html>  
- <head>        
-      <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
-      <title>Dashboard</title>  
-      <style>  
+<!DOCTYPE html>  
+<html>  
+<head>        
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
+    <title>Dashboard</title>  
+    <style>  
         body{  
             justify-content: space-around;  
             font-family: 'Poppins', sans-serif;  
@@ -29,8 +29,8 @@ while($hasil=mysqli_fetch_row($qry)){
             color:black;
         }
       </style>  
- </head>  
- <body>  
+</head>  
+<body>  
     <!-- Menampilkan data dari tabel guestbook -->
     <table width="750" align="center" cellpadding="2" cellspacing="0" border="1">
     <tr>
